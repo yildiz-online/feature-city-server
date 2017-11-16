@@ -30,12 +30,18 @@ import be.yildiz.module.database.data.PersistentData;
 import be.yildizgames.engine.feature.city.City;
 import be.yildizgames.engine.feature.city.ServerCity;
 import be.yildizgames.engine.feature.city.ServerCityManager;
+import be.yildizgames.engine.feature.city.building.BaseBuilding;
+import be.yildizgames.engine.feature.city.building.BuildingPosition;
+import be.yildizgames.engine.feature.city.building.BuildingType;
+import be.yildizgames.engine.feature.city.building.GameBuildingData;
 import be.yildizgames.engine.feature.city.building.construction.BuildingConstructionManager;
 import be.yildizgames.engine.feature.city.building.staff.Staff;
+import be.yildizgames.engine.feature.city.generated.database.tables.Buildings;
+import be.yildizgames.engine.feature.city.generated.database.tables.records.BuildingsRecord;
 import org.jooq.DSLContext;
+import org.jooq.RecordMapper;
 import org.jooq.conf.Settings;
 import org.jooq.impl.DSL;
-import org.jooq.types.UInteger;
 
 import java.sql.Connection;
 import java.util.Optional;
@@ -83,11 +89,11 @@ public final class PersistentBuilding implements PersistentData<BaseBuilding, Ba
         try (DSLContext create = this.getDSL(c)) {
             create.insertInto(table, table.CIT_ID, table.POSITION, table.TYPE, table.LEVEL, table.STAFF)
                     .values(
-                            UInteger.valueOf(data.getCity().value),
-                            UByte.valueOf(data.getBuildingPosition().value),
-                            UByte.valueOf(data.getType().type),
-                            UByte.valueOf(data.getLevel().value),
-                            UShort.valueOf(data.getStaff().value))
+                            (int) data.getCity().value,
+                            (byte) data.getBuildingPosition().value,
+                            (byte)data.getType().type,
+                            (byte)data.getLevel().value,
+                            (short)data.getStaff().value)
                     .execute();
             return data;
         }
@@ -96,11 +102,11 @@ public final class PersistentBuilding implements PersistentData<BaseBuilding, Ba
     @Override
     public void update(final BaseBuilding data, Connection c) {
         try (DSLContext create = this.getDSL(c)) {
-            BuildingsRecord building = create.fetchOne(table, table.CIT_ID.equal(UInteger.valueOf(data.getCity().value)).and(table.POSITION.equal(UByte.valueOf(data.getBuildingPosition().value))));
-            building.setCitId(UInteger.valueOf(data.getCity().value));
-            building.setType(UByte.valueOf(data.getType().type));
-            building.setLevel(UByte.valueOf(data.getLevel().value));
-            building.setStaff(UShort.valueOf(data.getStaff().value));
+            BuildingsRecord building = create.fetchOne(table, table.CIT_ID.equal((int)data.getCity().value).and(table.POSITION.equal((byte)data.getBuildingPosition().value)));
+            building.setCitId((int)data.getCity().value);
+            building.setType((byte)data.getType().type);
+            building.setLevel((byte)data.getLevel().value);
+            building.setStaff((short)data.getStaff().value);
             create.executeUpdate(building);
         }
     }
