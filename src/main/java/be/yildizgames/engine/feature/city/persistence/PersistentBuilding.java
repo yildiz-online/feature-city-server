@@ -24,10 +24,9 @@
 
 package be.yildizgames.engine.feature.city.persistence;
 
-import be.yildiz.common.Level;
-import be.yildiz.common.id.EntityId;
 import be.yildiz.module.database.data.PersistentData;
 import be.yildizgames.engine.feature.city.City;
+import be.yildizgames.engine.feature.city.CityId;
 import be.yildizgames.engine.feature.city.ServerCity;
 import be.yildizgames.engine.feature.city.ServerCityManager;
 import be.yildizgames.engine.feature.city.building.BaseBuilding;
@@ -38,6 +37,7 @@ import be.yildizgames.engine.feature.city.building.construction.BuildingConstruc
 import be.yildizgames.engine.feature.city.building.staff.Staff;
 import be.yildizgames.engine.feature.city.generated.database.tables.Buildings;
 import be.yildizgames.engine.feature.city.generated.database.tables.records.BuildingsRecord;
+import be.yildizgames.engine.feature.entity.Level;
 import org.jooq.DSLContext;
 import org.jooq.RecordMapper;
 import org.jooq.conf.Settings;
@@ -51,7 +51,7 @@ import java.util.Optional;
  *
  * @author Grégory Van den Borre
  */
-public final class PersistentBuilding implements PersistentData<BaseBuilding, BaseBuilding>, RecordMapper<BuildingsRecord, BaseBuilding> {
+public final class PersistentBuilding implements PersistentData<BaseBuilding, BaseBuilding, BaseBuilding>, RecordMapper<BuildingsRecord, BaseBuilding> {
 
     /**
      * Persistent unit where data must be retrieved.
@@ -113,7 +113,7 @@ public final class PersistentBuilding implements PersistentData<BaseBuilding, Ba
 
     @Override
     public BaseBuilding map(BuildingsRecord r) {
-        EntityId id = EntityId.valueOf(r.getCitId().longValue());
+        CityId id = CityId.valueOf(r.getCitId());
         BuildingPosition pos = BuildingPosition.valueOf(r.getPosition().intValue());
         BuildingType type = BuildingType.valueOf(r.getType().intValue());
         Level level = Level.valueOf(r.getLevel().intValue());

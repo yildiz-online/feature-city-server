@@ -24,9 +24,9 @@
 
 package be.yildizgames.engine.feature.city.persistence;
 
-import be.yildiz.common.collections.Maps;
-import be.yildiz.common.id.EntityId;
 import be.yildiz.module.database.data.PersistentData;
+import be.yildizgames.common.collection.Maps;
+import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.city.City;
 import be.yildizgames.engine.feature.city.ServerCity;
 import be.yildizgames.engine.feature.city.ServerCityManager;
@@ -50,7 +50,7 @@ import java.util.Optional;
  *
  * @author Grégory Van den Borre
  */
-public final class PersistentCity implements PersistentData<City, City>, RecordMapper<CitiesRecord, City> {
+public final class PersistentCity implements PersistentData<City, City, City>, RecordMapper<CitiesRecord, City> {
 
     /**
      * Persistent unit where data must be retrieved.
