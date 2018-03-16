@@ -24,24 +24,24 @@
 
 package be.yildizgames.engine.feature.city.persistence;
 
-import be.yildiz.module.database.data.PersistentData;
-import be.yildizgames.common.collection.Maps;
 import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.city.City;
-import be.yildizgames.engine.feature.city.ServerCity;
-import be.yildizgames.engine.feature.city.ServerCityManager;
 import be.yildizgames.engine.feature.city.building.BaseBuilding;
 import be.yildizgames.engine.feature.city.building.GameBuildingData;
 import be.yildizgames.engine.feature.city.building.construction.BuildingConstructionManager;
 import be.yildizgames.engine.feature.city.generated.database.tables.Buildings;
 import be.yildizgames.engine.feature.city.generated.database.tables.Cities;
 import be.yildizgames.engine.feature.city.generated.database.tables.records.CitiesRecord;
+import be.yildizgames.engine.feature.city.server.ServerCity;
+import be.yildizgames.engine.feature.city.server.ServerCityManager;
+import be.yildizgames.module.database.data.PersistentData;
 import org.jooq.DSLContext;
 import org.jooq.RecordMapper;
 import org.jooq.conf.Settings;
 import org.jooq.impl.DSL;
 
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -72,7 +72,7 @@ public final class PersistentCity implements PersistentData<City, City, City>, R
     public PersistentCity(final Connection c, BuildingConstructionManager<BaseBuilding, GameBuildingData, ServerCity> constructionManager, final ServerCityManager em) {
         super();
         this.cityManager = em;
-        Map<EntityId, String> names = Maps.newMap();
+        Map<EntityId, String> names = new HashMap<>();
         try (DSLContext create = this.getDSL(c)) {
             Optional.ofNullable(create.selectFrom(Cities.CITIES).fetch())
                     .ifPresent(citiesRecords ->

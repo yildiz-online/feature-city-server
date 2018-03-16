@@ -10,7 +10,7 @@ The library contains all the server components to use the city feature.
 
 ## Requirements
 
-To build this module, you will need a java 8 JDK and Maven 3.
+To build this module, you will need a java 9 JDK and Maven 3.
 
 ## Coding Style and other information
 
@@ -24,7 +24,7 @@ Wiki:
 https://yildiz.atlassian.net/wiki
 
 Quality report:
-https://sonarcloud.io/dashboard?id=be.yildiz-games%3Afeature-city-server
+https://sonarcloud.io/dashboard/index/be.yildiz-games:feature-city-server
 
 ## License
 

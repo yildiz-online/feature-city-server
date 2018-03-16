@@ -22,13 +22,20 @@
  *
  */
 
-package be.yildizgames.engine.feature.city;
+module be.yildizgames.feature.city.server {
 
-import be.yildizgames.engine.feature.city.building.BaseBuilding;
-import be.yildizgames.engine.feature.city.building.GameBuildingData;
+    requires java.sql;
+    requires java.xml.ws.annotation;
 
-/**
- * @author Grégory Van den Borre
- */
-public interface ServerCity extends City<BaseBuilding, GameBuildingData> {
+    requires be.yildizgames.common.geometry;
+    requires be.yildizgames.common.model;
+    requires be.yildizgames.feature.resource.shared;
+    requires be.yildizgames.feature.entity.shared;
+    requires be.yildizgames.feature.city.shared;
+    requires be.yildizgames.module.database;
+
+    requires org.jooq;
+
+    exports be.yildizgames.engine.feature.city.server;
+    exports be.yildizgames.engine.feature.city.persistence;
 }

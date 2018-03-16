@@ -22,32 +22,14 @@
  *
  */
 
-package be.yildizgames.engine.feature.city;
+package be.yildizgames.engine.feature.city.server;
 
-import be.yildizgames.common.geometry.Point3D;
-import be.yildizgames.common.model.EntityId;
-import be.yildizgames.common.model.PlayerId;
+import be.yildizgames.engine.feature.city.City;
 import be.yildizgames.engine.feature.city.building.BaseBuilding;
-import be.yildizgames.engine.feature.city.building.BuildingType;
 import be.yildizgames.engine.feature.city.building.GameBuildingData;
-import be.yildizgames.engine.feature.resource.ResourceValue;
-
-import java.util.Map;
 
 /**
  * @author Grégory Van den Borre
  */
-public class ServerBaseCity extends BaseCity<BaseBuilding, GameBuildingData> implements ServerCity {
-
-    /**
-     * Create a new BaseCity.
-     *
-     * @param id EntityId for this city.
-     * @param initialResource Resource when the city is built.
-     * @param positionOffset  Building positions.
-     * @param datas Data about the available buildings.
-     */
-    public ServerBaseCity(EntityId id, PlayerId owner, Point3D position, ResourceValue initialResource, Point3D[] positionOffset, Map<BuildingType, GameBuildingData> datas) {
-        super(id, owner, position, initialResource, positionOffset, datas);
-    }
+public interface ServerCity extends City<BaseBuilding, GameBuildingData> {
 }
