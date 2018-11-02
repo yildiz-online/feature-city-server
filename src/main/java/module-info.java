@@ -25,7 +25,7 @@
 module be.yildizgames.feature.city.server {
 
     requires java.sql;
-    requires java.xml.ws.annotation;
+    requires java.annotation;
 
     requires be.yildizgames.common.geometry;
     requires be.yildizgames.common.model;
