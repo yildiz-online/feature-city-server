@@ -28,6 +28,7 @@ import be.yildizgames.common.geometry.Point3D;
 import be.yildizgames.common.model.EntityId;
 import be.yildizgames.common.model.PlayerId;
 import be.yildizgames.engine.feature.city.BaseCity;
+import be.yildizgames.engine.feature.city.CityId;
 import be.yildizgames.engine.feature.city.building.BaseBuilding;
 import be.yildizgames.engine.feature.city.building.BuildingType;
 import be.yildizgames.engine.feature.city.building.GameBuildingData;
@@ -43,12 +44,12 @@ public class ServerBaseCity extends BaseCity<BaseBuilding, GameBuildingData> imp
     /**
      * Create a new BaseCity.
      *
-     * @param id EntityId for this city.
+     * @param id Id for this city.
      * @param initialResource Resource when the city is built.
      * @param positionOffset  Building positions.
      * @param datas Data about the available buildings.
      */
-    public ServerBaseCity(EntityId id, PlayerId owner, Point3D position, ResourceValue initialResource, Point3D[] positionOffset, Map<BuildingType, GameBuildingData> datas) {
+    public ServerBaseCity(CityId id, PlayerId owner, Point3D position, ResourceValue initialResource, Point3D[] positionOffset, Map<BuildingType, GameBuildingData> datas) {
         super(id, owner, position, initialResource, positionOffset, datas);
     }
 }
