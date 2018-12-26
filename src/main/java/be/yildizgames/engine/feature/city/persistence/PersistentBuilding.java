@@ -26,6 +26,7 @@ package be.yildizgames.engine.feature.city.persistence;
 
 import be.yildizgames.engine.feature.city.City;
 import be.yildizgames.engine.feature.city.CityId;
+import be.yildizgames.engine.feature.city.Level;
 import be.yildizgames.engine.feature.city.building.BaseBuilding;
 import be.yildizgames.engine.feature.city.building.BuildingPosition;
 import be.yildizgames.engine.feature.city.building.BuildingType;
@@ -36,7 +37,6 @@ import be.yildizgames.engine.feature.city.generated.database.tables.Buildings;
 import be.yildizgames.engine.feature.city.generated.database.tables.records.BuildingsRecord;
 import be.yildizgames.engine.feature.city.server.ServerCity;
 import be.yildizgames.engine.feature.city.server.ServerCityManager;
-import be.yildizgames.engine.feature.entity.Level;
 import be.yildizgames.module.database.data.PersistentData;
 import org.jooq.DSLContext;
 import org.jooq.RecordMapper;

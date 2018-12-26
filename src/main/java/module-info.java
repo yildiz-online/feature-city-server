@@ -30,7 +30,6 @@ module be.yildizgames.feature.city.server {
     requires be.yildizgames.common.geometry;
     requires be.yildizgames.common.model;
     requires be.yildizgames.feature.resource.shared;
-    requires be.yildizgames.feature.entity.shared;
     requires be.yildizgames.feature.city.shared;
     requires be.yildizgames.module.database;
 
