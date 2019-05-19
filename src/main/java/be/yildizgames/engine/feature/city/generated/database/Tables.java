@@ -56,4 +56,5 @@ public class Tables {
      * The table <code>PUBLIC.CITIES</code>.
      */
     public static final Cities CITIES = be.yildizgames.engine.feature.city.generated.database.tables.Cities.CITIES;
+
 }

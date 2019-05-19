@@ -258,4 +258,5 @@ public class CitiesRecord extends UpdatableRecordImpl<CitiesRecord> implements R
         set(1, entId);
         set(2, name);
     }
+
 }

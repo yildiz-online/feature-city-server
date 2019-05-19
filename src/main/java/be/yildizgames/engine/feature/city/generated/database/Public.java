@@ -98,4 +98,5 @@ public class Public extends SchemaImpl {
             Buildings.BUILDINGS,
             Cities.CITIES);
     }
+
 }

@@ -10,7 +10,7 @@ The library contains all the server components to use the city feature.
 
 ## Requirements
 
-To build this module, you will need a java 9 JDK and Maven 3.
+To build this module, you will need the latest Java JDK and Maven 3.
 
 ## Coding Style and other information
 

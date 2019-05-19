@@ -85,4 +85,5 @@ public class Keys {
         public static final UniqueKey<BuildingsRecord> PK_BUILDINGS = createUniqueKey(Buildings.BUILDINGS, "PK_BUILDINGS", Buildings.BUILDINGS.BLD_ID);
         public static final UniqueKey<CitiesRecord> PK_CITIES = createUniqueKey(Cities.CITIES, "PK_CITIES", Cities.CITIES.CIT_ID);
     }
+
 }

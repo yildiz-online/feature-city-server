@@ -191,4 +191,5 @@ public class Cities extends TableImpl<CitiesRecord> {
     public Cities rename(Name name) {
         return new Cities(name, null);
     }
+
 }

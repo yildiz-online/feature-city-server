@@ -32,5 +32,4 @@ import be.yildizgames.engine.feature.city.building.GameBuildingData;
  * @author Grégory Van den Borre
  */
 public interface ServerCityManager extends CityManager<BaseBuilding, GameBuildingData, ServerCity> {
-
 }

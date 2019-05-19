@@ -206,4 +206,5 @@ public class Buildings extends TableImpl<BuildingsRecord> {
     public Buildings rename(Name name) {
         return new Buildings(name, null);
     }
+
 }

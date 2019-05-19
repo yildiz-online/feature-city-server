@@ -126,4 +126,5 @@ public final class PersistentBuilding implements PersistentData<BaseBuilding, Ba
         settings.setExecuteLogging(false);
         return DSL.using(c, settings);
     }
+
 }

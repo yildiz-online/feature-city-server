@@ -405,4 +405,5 @@ public class BuildingsRecord extends UpdatableRecordImpl<BuildingsRecord> implem
         set(4, level);
         set(5, staff);
     }
+
 }

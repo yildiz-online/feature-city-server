@@ -80,4 +80,5 @@ public class DefaultCatalog extends CatalogImpl {
         return Arrays.<Schema>asList(
             Public.PUBLIC);
     }
+
 }

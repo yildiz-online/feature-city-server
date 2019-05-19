@@ -52,4 +52,5 @@ public class ServerBaseCity extends BaseCity<BaseBuilding, GameBuildingData> imp
     public ServerBaseCity(CityId id, PlayerId owner, Point3D position, ResourceValue initialResource, Point3D[] positionOffset, Map<BuildingType, GameBuildingData> datas) {
         super(id, owner, position, initialResource, positionOffset, datas);
     }
+
 }

@@ -46,5 +46,4 @@
       <column name="STAFF" type="SMALLINT" />
     </createTable>
   </changeSet>
-
 </databaseChangeLog>

@@ -107,4 +107,5 @@ public final class PersistentCity implements PersistentData<City, City, City>, R
         settings.setExecuteLogging(false);
         return DSL.using(c, settings);
     }
+
 }
