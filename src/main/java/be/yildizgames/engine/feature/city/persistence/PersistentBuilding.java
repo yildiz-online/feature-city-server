@@ -24,9 +24,9 @@
 
 package be.yildizgames.engine.feature.city.persistence;
 
+import be.yildizgames.common.model.Level;
 import be.yildizgames.engine.feature.city.City;
 import be.yildizgames.engine.feature.city.CityId;
-import be.yildizgames.engine.feature.city.Level;
 import be.yildizgames.engine.feature.city.building.BaseBuilding;
 import be.yildizgames.engine.feature.city.building.BuildingPosition;
 import be.yildizgames.engine.feature.city.building.BuildingType;
