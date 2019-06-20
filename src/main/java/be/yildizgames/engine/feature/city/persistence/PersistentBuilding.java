@@ -89,7 +89,7 @@ public final class PersistentBuilding implements PersistentData<BaseBuilding, Ba
         try (DSLContext create = this.getDSL(c)) {
             create.insertInto(table, table.CIT_ID, table.POSITION, table.TYPE, table.LEVEL, table.STAFF)
                     .values(
-                            (int) data.getCity().value,
+                            data.getCity().value,
                             (byte) data.getBuildingPosition().value,
                             (byte)data.getType().type,
                             (byte)data.getLevel().value,
@@ -102,8 +102,8 @@ public final class PersistentBuilding implements PersistentData<BaseBuilding, Ba
     @Override
     public void update(final BaseBuilding data, Connection c) {
         try (DSLContext create = this.getDSL(c)) {
-            BuildingsRecord building = create.fetchOne(table, table.CIT_ID.equal((int)data.getCity().value).and(table.POSITION.equal((byte)data.getBuildingPosition().value)));
-            building.setCitId((int)data.getCity().value);
+            BuildingsRecord building = create.fetchOne(table, table.CIT_ID.equal(data.getCity().value).and(table.POSITION.equal((byte)data.getBuildingPosition().value)));
+            building.setCitId(data.getCity().value);
             building.setType((byte)data.getType().type);
             building.setLevel((byte)data.getLevel().value);
             building.setStaff((short)data.getStaff().value);
